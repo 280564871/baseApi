@@ -2,13 +2,12 @@ package main
 
 import (
 	"api/conf"
-	"api/pkg"
+	"api/moudel"
 	"api/route"
 )
 
-func main(){
+func main() {
 	conf.InitConfig()
-	pkg.InitDb()
+	moudel.InitDb()
 	route.InitRoute()
-	defer pkg.CloseDb()
 }
