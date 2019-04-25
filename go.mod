@@ -10,6 +10,7 @@ require (
 	github.com/go-xorm/core v0.6.1-0.20181008132326-6bc9412b1c4d
 	github.com/go-xorm/xorm v0.7.1
 	github.com/mattn/go-isatty v0.0.7 // indirect
+	github.com/medivhzhan/weapp v1.1.1
 	github.com/ugorji/go v1.1.4 // indirect
 	gopkg.in/go-playground/validator.v8 v8.18.2 // indirect
 )

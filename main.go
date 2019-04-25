@@ -2,12 +2,12 @@ package main
 
 import (
 	"api/conf"
-	"api/moudel"
+	"api/models"
 	"api/route"
 )
 
 func main() {
 	conf.InitConfig()
-	moudel.InitDb()
+	models.InitDb()
 	route.InitRoute()
 }

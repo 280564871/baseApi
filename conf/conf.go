@@ -22,9 +22,16 @@ type mysqlConfig struct {
 	Loc       string `ini:"loc"`
 }
 
+type wxConfig struct {
+	AppId     string `ini:"appId"`
+	AppSecret string `ini:"appSecret"`
+}
+
 var AppCfg appConfig
 
 var MysqlCfg mysqlConfig
+
+var WxCfg wxConfig
 
 //初始化配置
 func InitConfig() {
@@ -39,6 +46,11 @@ func InitConfig() {
 	}
 
 	err = cfg.Section("mysql").MapTo(&MysqlCfg)
+	if err != nil {
+		log.Println(err)
+	}
+
+	err = cfg.Section("wx").MapTo(&WxCfg)
 	if err != nil {
 		log.Println(err)
 	}

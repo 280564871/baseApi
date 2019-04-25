@@ -11,7 +11,7 @@ import (
 )
 
 //生成orm 映射struct
-//xorm reverse mysql root:root@/shop?charset=utf8 /Users/work/code/go/api/moudel/tmplate/
+//xorm reverse mysql root:root@/shop?charset=utf8 /Users/work/code/go/api/models/tmplate/
 
 var db *xorm.Engine
 

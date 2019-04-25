@@ -3,18 +3,23 @@ package route
 import (
 	"api/conf"
 	"api/middlewear/jwt"
+	"api/route/api"
 	"github.com/gin-gonic/gin"
+	"io"
+	"os"
 )
 
 //初始化路由
 func InitRoute() {
-	g := gin.New()
-	g.Use(gin.Logger())
+	g := gin.Default()
+	f, _ := os.Create("log/gin.log")
+	gin.DefaultWriter = io.MultiWriter(f)
 
-	g.Group("/v1", func(context *gin.Context) {
-		g.Group("login")
-		g.Use(checkToken)
-	})
+	v1 := g.Group("/v1")
+	{
+		v1.POST("/wxLogin", api.LoginByWx)
+		v1.Use(checkToken)
+	}
 	g.Run()
 }
 
